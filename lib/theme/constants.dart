@@ -1,6 +1,6 @@
 //存放所的资源常量，避免因资源名称改动，而多处改动
 final String SPLASH_IMAGE = 'lib/image/bg_loading.jpg';
-final String HOME_ICON = 'ib/image/comui_tab_home.png';
+final String HOME_ICON = 'lib/image/comui_tab_home.png';
 final String HOME_SELECTED_ICON = 'lib/image/comui_tab_home_selected.png';
 final String MESSAGE_ICON = 'lib/image/comui_tab_message.png';
 final String MESSAGE_SELECTED_ICON = 'lib/image/comui_tab_message_selected.png';
