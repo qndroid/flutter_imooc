@@ -1,2 +1,8 @@
-# flutter_imooc
-将Imooc_Business 改造为flutter编写
+# flutter_module
+
+A new Flutter module.
+
+## Getting Started
+
+For help getting started with Flutter, view our online
+[documentation](https://flutter.io/).

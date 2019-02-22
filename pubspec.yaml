@@ -1,0 +1,76 @@
+name: flutter_module
+description: A new Flutter module.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+  device_info: 0.2.1
+  intl: 0.15.7
+  connectivity: 0.3.2
+  english_words: ^3.1.0
+  url_launcher: 4.0.1
+  video_player: 0.7.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  #源码依赖http_plugin插件工程
+  http_plugin:
+      path: ./http_plugin/
+
+  json_serializable: ^2.0.0
+  build_runner: ^1.0.0
+# For information on the generic Dart part of this file, see the
+# following page: https://www.dartlang.org/tools/pub/pubspec
+
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+  assets:
+     - lib/image/bg_loading.jpg
+     - lib/image/comui_tab_home.png
+     - lib/image/comui_tab_home_selected.png
+     - lib/image/comui_tab_message.png
+     - lib/image/comui_tab_message_selected.png
+     - lib/image/comui_tab_person.png
+     - lib/image/comui_tab_person_selected.png
+     - lib/image/bar_code_scan_icon.png
+     - lib/image/category.png
+     - lib/image/page_loading_01.png
+     - lib/image/page_loading_02.png
+     - lib/image/page_loading_03.png
+     - lib/image/page_loading_04.png
+     - lib/image/page_loading_05.png
+     - lib/image/page_loading_06.png
+     - lib/image/page_loading_07.png
+     - lib/image/page_loading_08.png
+     - lib/image/page_loading_09.png
+     - lib/image/page_loading_10.png
+     - lib/image/page_loading_11.png
+     - lib/image/page_loading_12.png
+     - lib/image/page_loading_13.png
+     - lib/image/page_loading_14.png
+     - lib/image/icon_chats.png
+     - lib/image/icon_imooc.png
+     - lib/image/love_red.png
+     - lib/image/default_user_avatar.png
+     - lib/image/comui_share_weixin.png
+     - lib/image/comui_share_weixin_pengyou.png
+     - lib/image/comui_share_qq.png
+     - lib/image/comui_share_qqzone.png
+
+
+  module:
+    androidPackage: com.lianjia.fluttermodule
+    iosBundleIdentifier: com.lianjia.flutterModule
