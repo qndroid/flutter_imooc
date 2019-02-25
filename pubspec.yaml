@@ -26,7 +26,8 @@ dev_dependencies:
   #源码依赖http_plugin插件工程
   http_plugin:
       path: ./http_plugin/
-
+  share_plugin:
+      path: ./share_plugin/
   json_serializable: ^2.0.0
   build_runner: ^1.0.0
 # For information on the generic Dart part of this file, see the

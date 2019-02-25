@@ -46,3 +46,8 @@ final String MESSAGE_ZAN = '收到的赞';
 final String MESSAGE_ZAN_TIP = '还没有收到赞.';
 final String MESSAGE_IMOOC = '慕课网';
 final String MESSAGE_IMOOC_TIP = '再不学习慕女神不喜欢你了.';
+
+final String SHARE_QQ = "QQ";
+final String SHARE_QZONE = "QZONE";
+final String SHARE_WEIXIN = "WEIXIN";
+final String SHARE_WEIXIN_MOMENT = "WEIXIN_MOMENT";

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../theme/options.dart';
 import '../../theme/style.dart';
 import '../../theme/constants.dart';
+import 'package:share_plugin/share_plugin.dart';
 
 class MinePage extends StatefulWidget {
   @override
@@ -151,7 +152,6 @@ class FunctionItemWidget extends StatelessWidget {
                   ),
                 )
               : Container(),
-          //: null,
         ],
       ),
     );
@@ -159,6 +159,14 @@ class FunctionItemWidget extends StatelessWidget {
 }
 
 class ShareWidget extends StatelessWidget {
+  var payload = {
+    'type': '2',
+    'title': '慕课网',
+    'title_url': 'http://www.imooc.com',
+    'site': 'imooc',
+    'site_url': 'http://www.imooc.com'
+  };
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -174,8 +182,7 @@ class ShareWidget extends StatelessWidget {
                 SHARE_WEIXIN_ICON,
                 SHARE_WEIXIN_NAME,
                 callback: (TapDownDetails details) {
-                  print('weixin');
-                  Navigator.pop(context);
+                  SharePlugin.share(SHARE_WEIXIN, payload);
                 },
               ),
               Padding(
@@ -185,8 +192,7 @@ class ShareWidget extends StatelessWidget {
                 SHARE_MOMENT_ICON,
                 SHARE_MOMENT_NAME,
                 callback: (TapDownDetails details) {
-                  print('moment');
-                  Navigator.pop(context);
+                  SharePlugin.share(SHARE_WEIXIN_MOMENT, payload);
                 },
               ),
               Padding(
@@ -196,8 +202,7 @@ class ShareWidget extends StatelessWidget {
                 SHARE_QQ_ICON,
                 SHARE_QQ_NAME,
                 callback: (TapDownDetails details) {
-                  print('qq');
-                  Navigator.pop(context);
+                  SharePlugin.share(SHARE_QQ, payload);
                 },
               ),
               Padding(
@@ -207,8 +212,7 @@ class ShareWidget extends StatelessWidget {
                 SHARE_QZONE_ICON,
                 SHARE_QZONE_NAME,
                 callback: (TapDownDetails details) {
-                  print('qzone');
-                  Navigator.pop(context);
+                  SharePlugin.share(SHARE_QZONE, payload);
                 },
               ),
             ],
