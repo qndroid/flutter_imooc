@@ -46,6 +46,10 @@ final String MESSAGE_ZAN = '收到的赞';
 final String MESSAGE_ZAN_TIP = '还没有收到赞.';
 final String MESSAGE_IMOOC = '慕课网';
 final String MESSAGE_IMOOC_TIP = '再不学习慕女神不喜欢你了.';
+final String UPDATE_TITLE = '发现新版本';
+final String UPDATE_CONTENT = '发现新版本,请尽快更新,体验更丰富的功能';
+final String UPDATE_OPER_AGREE = '更新';
+final String UPDATE_OPER_DISAGREE = '跳过';
 
 final String SHARE_QQ = "QQ";
 final String SHARE_QZONE = "QZONE";

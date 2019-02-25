@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import '../../theme/options.dart';
 import '../../theme/style.dart';
 import '../../theme/constants.dart';
+import '../../request/api.dart';
 import 'package:share_plugin/share_plugin.dart';
+
+enum DialogDemoAction {
+  cancel,
+  discard,
+  disagree,
+  agree,
+}
 
 class MinePage extends StatefulWidget {
   @override
@@ -69,6 +77,46 @@ class MinePageState extends State<MinePage> {
         });
   }
 
+  //检查app版本
+  Future<void> _checkVersion(BuildContext context) async {
+    var data = await checkAppVersion();
+    print(data.currentVersion);
+    if (data.currentVersion > 0) {
+      //显示dialog，实际要比较的是app当前版本，需要原生提供方法
+      showDialog<DialogDemoAction>(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text(
+                UPDATE_TITLE,
+                style: itemTitleStyle,
+              ),
+              content: Text(
+                UPDATE_TITLE,
+                style: itemSubTitleStyle,
+              ),
+              actions: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    Navigator.pop(context, DialogDemoAction.disagree);
+                  },
+                  child: Text(UPDATE_OPER_DISAGREE),
+                ),
+                FlatButton(
+                    child: Text(UPDATE_OPER_AGREE),
+                    onPressed: () {
+                      Navigator.pop(context, DialogDemoAction.agree);
+                    })
+              ],
+            );
+          }).then((DialogDemoAction value) {
+        if (value != null) {
+          print(value);
+        }
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -106,6 +154,9 @@ class MinePageState extends State<MinePage> {
               APP_UPDATE_TIP,
               true,
               0,
+              callback: (TapDownDetails details) {
+                _checkVersion(context);
+              },
             ),
           ],
         ),
