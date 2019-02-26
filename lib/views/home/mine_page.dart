@@ -4,6 +4,9 @@ import '../../theme/style.dart';
 import '../../theme/constants.dart';
 import '../../request/api.dart';
 import 'package:share_plugin/share_plugin.dart';
+import '../login.dart';
+import '../../model/user_model.dart';
+import '../../manager/user_manager.dart';
 
 enum DialogDemoAction {
   cancel,
@@ -20,6 +23,8 @@ class MinePage extends StatefulWidget {
 }
 
 class MinePageState extends State<MinePage> {
+  User _user;
+
   ThemeData _getThemeData() {
     return initOptions.theme.data.copyWith(
         platform: initOptions.platform,
@@ -30,39 +35,54 @@ class MinePageState extends State<MinePage> {
   Widget _getUserInfoWidget() {
     return Padding(
       padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-            width: 80,
-            height: 80,
-            child: CircleAvatar(
-              child: Image.asset(
-                USER_DEFAULT_ICON,
-                fit: BoxFit.fill,
+      child: GestureDetector(
+        onTapDown: (TapDownDetails details) {
+          if (_user == null) {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => LoginPage()))
+                .then((user) {
+              setState(() {
+                _user = user;
+              });
+            });
+          } else {
+            //已登陆
+          }
+        },
+        child: Row(
+          children: <Widget>[
+            SizedBox(
+              width: 80,
+              height: 80,
+              child: CircleAvatar(
+                child: Image.asset(
+                  USER_DEFAULT_ICON,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(left: 20),
-              child: Text(
-                USER_UNLOGIN_TIP,
-                style: itemSubTitleStyle,
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.only(left: 20),
+                child: Text(
+                  _user == null ? USER_UNLOGIN_TIP : _user.name,
+                  style: itemSubTitleStyle,
+                ),
               ),
             ),
-          ),
-          Container(
-            width: 90,
-            height: 43,
-            color: Color(0xFFFED952),
-            child: Center(
-              child: Text(
-                USER_LOGIN_TIP,
-                style: itemTitleStyle,
+            Container(
+              width: 90,
+              height: 43,
+              color: Color(0xFFFED952),
+              child: Center(
+                child: Text(
+                  _user == null ? USER_LOGIN_TIP : USER_LOGINED_TIP,
+                  style: itemTitleStyle,
+                ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

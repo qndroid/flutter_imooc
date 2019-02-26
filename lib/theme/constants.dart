@@ -25,6 +25,7 @@ final String PAGE_LOADING_ICON_06 = 'lib/image/page_loading_06.png';
 final String PAGE_LOADING_ICON_07 = 'lib/image/page_loading_07.png';
 final String PAGE_LOADING_ICON_08 = 'lib/image/page_loading_08.png';
 final String PAGE_LOADING_ICON_09 = 'lib/image/page_loading_09.png';
+final String LOGIN_ICON = 'lib/image/icon_login.png';
 
 final String HOME_PAGE = '首页';
 final String HOME_PAGE_SEARCH_HINT = '请输入宝贝关键字';
@@ -36,6 +37,7 @@ final String SHARE_QZONE_NAME = 'QQ空间';
 final String CANCEL_NAME = '取消';
 final String USER_UNLOGIN_TIP = '您还未登陆喔.';
 final String USER_LOGIN_TIP = '马上登陆';
+final String USER_LOGINED_TIP = '已登陆';
 final String VIDEO_SETTING_TIP = '视频播放设置';
 final String SHARE_SETTING_TIP = '分享imooc给朋友';
 final String MY_QRCODE_TIP = '我的二维码';
@@ -55,3 +57,7 @@ final String SHARE_QQ = "QQ";
 final String SHARE_QZONE = "QZONE";
 final String SHARE_WEIXIN = "WEIXIN";
 final String SHARE_WEIXIN_MOMENT = "WEIXIN_MOMENT";
+
+final String LOGIN_INPUTE_ACCOUNT = '请输入帐户';
+final String LOGIN_INPUTE_PWD = '请输入密码';
+final String LOGIN_LOGIN = '登陆';

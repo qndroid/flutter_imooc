@@ -18,18 +18,22 @@ class HomePageState extends State<HomePage> {
     HomeTabModel._(MESSAGE_TITLE, MESSAGE_ICON, MESSAGE_SELECTED_ICON),
     HomeTabModel._(MINE_PAGE, MINE_ICON, MINE_SELECTED_ICON)
   ];
-  final _pages = [MainPage(), MessagePage(), MinePage()];
+  var _pages;
   int _tabIndex = 0;
 
   @override
   void initState() {
     super.initState();
+    _pages = [MainPage(), MessagePage(), MinePage()];
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_tabIndex],
+      body: IndexedStack(
+        index: _tabIndex,
+        children: _pages,
+      ),
       bottomNavigationBar: new BottomNavigationBar(
         items: _tabs.map<BottomNavigationBarItem>((tab) {
           return BottomNavigationBarItem(
