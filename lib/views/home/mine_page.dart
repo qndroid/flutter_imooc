@@ -92,7 +92,7 @@ class MinePageState extends State<MinePage> {
                 style: itemTitleStyle,
               ),
               content: Text(
-                UPDATE_TITLE,
+                UPDATE_CONTENT,
                 style: itemSubTitleStyle,
               ),
               actions: <Widget>[
