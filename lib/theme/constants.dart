@@ -26,6 +26,7 @@ final String PAGE_LOADING_ICON_07 = 'lib/image/page_loading_07.png';
 final String PAGE_LOADING_ICON_08 = 'lib/image/page_loading_08.png';
 final String PAGE_LOADING_ICON_09 = 'lib/image/page_loading_09.png';
 final String LOGIN_ICON = 'lib/image/icon_login.png';
+final String SEARCH_ICON = 'lib/image/icon_search.png';
 
 final String HOME_PAGE = '首页';
 final String HOME_PAGE_SEARCH_HINT = '请输入宝贝关键字';

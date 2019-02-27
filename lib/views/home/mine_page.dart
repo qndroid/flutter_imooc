@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:share_plugin/share_plugin.dart';
 import '../../theme/options.dart';
 import '../../theme/style.dart';
 import '../../theme/constants.dart';
 import '../../request/api.dart';
-import 'package:share_plugin/share_plugin.dart';
 import '../login.dart';
 import '../../model/user_model.dart';
-import '../../manager/user_manager.dart';
 
 enum DialogDemoAction {
   cancel,

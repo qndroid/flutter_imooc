@@ -39,7 +39,7 @@ ThemeData _buildDarkTheme() {
     accentColor: secondaryColor,
     canvasColor: const Color(0xFF202124),
     scaffoldBackgroundColor: const Color(0xFF202124),
-    backgroundColor: const Color(0xFF202124),
+    backgroundColor: const Color(0xFFDDDDDD),
     errorColor: const Color(0xFFB00020),
     buttonTheme: ButtonThemeData(
       colorScheme: colorScheme,
@@ -69,7 +69,7 @@ ThemeData _buildLightTheme() {
     accentColor: secondaryColor,
     canvasColor: Colors.white,
     scaffoldBackgroundColor: Colors.white,
-    backgroundColor: Colors.white,
+    backgroundColor: Color(0xFFEFEFF4),
     errorColor: const Color(0xFFB00020),
     hintColor: const Color(0xFFcdcdcd),
     buttonTheme: ButtonThemeData(

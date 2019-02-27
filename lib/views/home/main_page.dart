@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../commponents/frame_animation.dart';
 import '../../theme/constants.dart';
+import '../search.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -34,15 +35,22 @@ class MainPageState extends State<MainPage> {
         Expanded(
           child: Padding(
             padding: EdgeInsets.only(left: 8, right: 8, top: 10, bottom: 8),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(6))),
-              child: Center(
-                child: Text(
-                  HOME_PAGE_SEARCH_HINT, //此处后面改成使用主题中的颜色，否则不能做到动态换主题
-                  style: TextStyle(
-                      color: Theme.of(context).hintColor, fontSize: 16),
+            child: GestureDetector(
+              onTapDown: (TapDownDetails details) {
+                //进入搜索页面
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => SearchPage()));
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(6))),
+                child: Center(
+                  child: Text(
+                    HOME_PAGE_SEARCH_HINT, //此处后面改成使用主题中的颜色，否则不能做到动态换主题
+                    style: TextStyle(
+                        color: Theme.of(context).hintColor, fontSize: 16),
+                  ),
                 ),
               ),
             ),

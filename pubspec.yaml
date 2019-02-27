@@ -71,6 +71,7 @@ flutter:
      - lib/image/comui_share_qq.png
      - lib/image/comui_share_qqzone.png
      - lib/image/icon_login.png
+     - lib/image/icon_search.png
 
 
   module:

@@ -3,6 +3,7 @@ import 'dart:convert';
 import '../model/home_model.dart';
 import '../model/check_version_model.dart';
 import '../model/user_model.dart';
+import '../model/search_model.dart';
 
 Future<HomeData> getHomeData() async {
   //模拟请求参数
@@ -33,4 +34,16 @@ Future<User> login(username, pwd) async {
   };
   final String result = await HttpPlugin.post(data);
   return User.fromJson(json.decode(result));
+}
+
+Future<SearchModel> search(key) async {
+  //模拟请求参数
+  var data = {
+    "url": "http://api.imooc.com/search",
+    "params": {
+      "key": key,
+    }
+  };
+  final String result = await HttpPlugin.get(data);
+  return SearchModel.fromJson(json.decode(result));
 }
