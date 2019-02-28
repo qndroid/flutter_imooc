@@ -1,0 +1,1 @@
+../../../../../.ios/Flutter/.symlinks/share_plugin/ios/Classes/SharePlugin.h

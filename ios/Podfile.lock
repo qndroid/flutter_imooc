@@ -1,0 +1,71 @@
+PODS:
+  - connectivity (0.0.1):
+    - Flutter
+    - Reachability
+  - device_info (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - connectivity
+    - device_info
+    - Flutter
+    - http_plugin
+    - share_plugin
+    - url_launcher
+    - video_player
+  - http_plugin (0.0.1):
+    - Flutter
+  - Reachability (3.2)
+  - share_plugin (0.0.1):
+    - Flutter
+  - url_launcher (0.0.1):
+    - Flutter
+  - video_player (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - connectivity (from `../.ios/Flutter/.symlinks/connectivity/ios`)
+  - device_info (from `../.ios/Flutter/.symlinks/device_info/ios`)
+  - Flutter (from `../.ios/Flutter/engine`)
+  - FlutterPluginRegistrant (from `../.ios/Flutter/FlutterPluginRegistrant`)
+  - http_plugin (from `../.ios/Flutter/.symlinks/http_plugin/ios`)
+  - share_plugin (from `../.ios/Flutter/.symlinks/share_plugin/ios`)
+  - url_launcher (from `../.ios/Flutter/.symlinks/url_launcher/ios`)
+  - video_player (from `../.ios/Flutter/.symlinks/video_player/ios`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Reachability
+
+EXTERNAL SOURCES:
+  connectivity:
+    :path: "../.ios/Flutter/.symlinks/connectivity/ios"
+  device_info:
+    :path: "../.ios/Flutter/.symlinks/device_info/ios"
+  Flutter:
+    :path: "../.ios/Flutter/engine"
+  FlutterPluginRegistrant:
+    :path: "../.ios/Flutter/FlutterPluginRegistrant"
+  http_plugin:
+    :path: "../.ios/Flutter/.symlinks/http_plugin/ios"
+  share_plugin:
+    :path: "../.ios/Flutter/.symlinks/share_plugin/ios"
+  url_launcher:
+    :path: "../.ios/Flutter/.symlinks/url_launcher/ios"
+  video_player:
+    :path: "../.ios/Flutter/.symlinks/video_player/ios"
+
+SPEC CHECKSUMS:
+  connectivity: d5992e3758d68b1c4b12d6e012fe0813f1aa1645
+  device_info: 76ce0b32e13034d1883be4a382433648f9dcee63
+  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
+  FlutterPluginRegistrant: 50e2e58c05ae3f4e663e5b4a2cf13b70c302d113
+  http_plugin: 4b57b56a1ca37c1ac0803edbe8cd6cf33cf1e025
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  share_plugin: 4d690063ed214215ec9c1f1cf58812b5de75d689
+  url_launcher: 92b89c1029a0373879933c21642958c874539095
+  video_player: 906796a841943c8d370ac7c13b18039aa9b56498
+
+PODFILE CHECKSUM: 72e1e8175dfc89701dce64d331963d9d73fd85e9
+
+COCOAPODS: 1.5.3

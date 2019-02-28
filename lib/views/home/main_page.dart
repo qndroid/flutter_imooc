@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../commponents/frame_animation.dart';
 import '../../theme/constants.dart';
 import '../search.dart';
+import '../../theme/style.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -38,8 +39,21 @@ class MainPageState extends State<MainPage> {
             child: GestureDetector(
               onTapDown: (TapDownDetails details) {
                 //进入搜索页面
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => SearchPage()));
+                Navigator.push(
+                    context,
+                    new PageRouteBuilder(pageBuilder: (BuildContext context,
+                        Animation<double> animation,
+                        Animation<double> secondaryAnimation) {
+                      // 跳转的路由对象
+                      return SearchPage();
+                    }, transitionsBuilder: (
+                      BuildContext context,
+                      Animation<double> animation,
+                      Animation<double> secondaryAnimation,
+                      Widget child,
+                    ) {
+                      return createRight2LeftTransition(animation, child);
+                    }));
               },
               child: Container(
                 decoration: BoxDecoration(

@@ -1,0 +1,1 @@
+../../../../../.ios/Flutter/.symlinks/http_plugin/ios/Classes/HttpPlugin.h

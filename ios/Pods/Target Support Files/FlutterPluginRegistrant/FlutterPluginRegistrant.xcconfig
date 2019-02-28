@@ -1,0 +1,14 @@
+CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../../.ios/Flutter/engine"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/FlutterPluginRegistrant" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Flutter" "${PODS_ROOT}/Headers/Public/FlutterPluginRegistrant" "${PODS_ROOT}/Headers/Public/Reachability" "${PODS_ROOT}/Headers/Public/connectivity" "${PODS_ROOT}/Headers/Public/device_info" "${PODS_ROOT}/Headers/Public/http_plugin" "${PODS_ROOT}/Headers/Public/share_plugin" "${PODS_ROOT}/Headers/Public/url_launcher" "${PODS_ROOT}/Headers/Public/video_player"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Reachability" "${PODS_CONFIGURATION_BUILD_DIR}/connectivity" "${PODS_CONFIGURATION_BUILD_DIR}/device_info" "${PODS_CONFIGURATION_BUILD_DIR}/http_plugin" "${PODS_CONFIGURATION_BUILD_DIR}/share_plugin" "${PODS_CONFIGURATION_BUILD_DIR}/url_launcher" "${PODS_CONFIGURATION_BUILD_DIR}/video_player"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/../../.ios/Flutter/FlutterPluginRegistrant
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES
+#include "/Users/renzhiqiang/git_flutter_imooc/.ios/Flutter/Generated.xcconfig"
+#include "/Users/renzhiqiang/git_flutter_imooc/.ios/Flutter/Generated.xcconfig"
+#include "/Users/renzhiqiang/git_flutter_imooc/.ios/Flutter/Generated.xcconfig"
