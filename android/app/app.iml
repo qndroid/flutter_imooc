@@ -101,7 +101,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../build/host/intermediates/split_list" />
       <excludeFolder url="file://$MODULE_DIR$/../../build/host/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/../../build/host/outputs" />
-      <excludeFolder url="file://$MODULE_DIR$/../../build/host/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 27 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

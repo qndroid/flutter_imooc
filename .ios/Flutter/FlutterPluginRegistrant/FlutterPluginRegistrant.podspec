@@ -17,10 +17,7 @@ Depends on all your plugins, and provides a function to register them.
   s.source           = { :path => '.' }
   s.public_header_files = './Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'connectivity'
   s.dependency 'device_info'
   s.dependency 'http_plugin'
   s.dependency 'share_plugin'
-  s.dependency 'url_launcher'
-  s.dependency 'video_player'
 end
