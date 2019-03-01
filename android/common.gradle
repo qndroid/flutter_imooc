@@ -1,0 +1,30 @@
+ext {
+
+  android = [compileSdkVersion: 27,
+             applicationId    : 'com.lianjia.fluttermodule.host',
+             minSdkVersion    : 16,
+             targetSdkVersion : 27,
+             versionCode      : 1,
+             versionName      : '1.0.0',]
+
+  flutter = [versionCode: 1,
+             versionName: '1.0.0',]
+
+  signConfigs = ['storeFile'    : 'youdo.jks',
+                 'storePassword': 'rzq123456',
+                 'keyAlias'     : 'qndroid',
+                 'keyPassword'  : 'rzq123456',]
+
+
+  dependence = ['libSupportV7'      : 'com.android.support:appcompat-v7:27.1.1',
+                'libSupportV13'     : 'com.android.support:appcompat-v13:27.1.1',
+                'libAnnotations'    : 'com.android.support:support-annotations:27.1.1',
+                'libSupportMultidex': 'com.android.support:multidex:1.0.1',
+                'libDesign'         : 'com.android.support:design:27.1.1',
+                'libConstraint'     : 'com.android.support.constraint:constraint-layout:1.1.2',
+                'libOkhttp'         : 'com.squareup.okhttp3:okhttp:3.3.0',
+                'productFlutter'    : ':flutter',
+                'productQrcode'     : ':qrcode',
+
+  ]
+}

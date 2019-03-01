@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import '../../commponents/frame_animation.dart';
 import '../../theme/constants.dart';
@@ -12,6 +14,7 @@ class MainPage extends StatefulWidget {
 }
 
 class MainPageState extends State<MainPage> {
+  static const platform = const MethodChannel('com.imooc/navigator');
   final List<String> _assetList = [
     PAGE_LOADING_ICON_01,
     PAGE_LOADING_ICON_02,
@@ -24,14 +27,32 @@ class MainPageState extends State<MainPage> {
     PAGE_LOADING_ICON_09,
   ];
 
+  Future<void> _startCaptureActivity() async {
+    var result;
+    try {
+      //跳转到原生页面并获取返回数据
+      result = await platform.invokeMethod('start_activity_for_result', {
+        'activity_name': 'test_activity',
+        'params': {'user_name': 'flutter', 'request_code': 0}
+      });
+    } on PlatformException catch (e) {}
+
+    print(result);
+  }
+
   Widget _getTitleWidget() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        SizedBox(
-          width: 22,
-          height: 22,
-          child: Image.asset(QRCODE_ICON),
+        GestureDetector(
+          child: SizedBox(
+            width: 22,
+            height: 22,
+            child: Image.asset(QRCODE_ICON),
+          ),
+          onTapDown: (TapDownDetails details) {
+            _startCaptureActivity();
+          },
         ),
         Expanded(
           child: Padding(
