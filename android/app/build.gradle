@@ -27,7 +27,6 @@ buildDir = new File(rootProject.projectDir, "../build/host")
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation project(rootProject.ext.dependence.productFlutter)
-  //implementation project(rootProject.ext.dependence.productQrcode)
   implementation rootProject.ext.dependence.libSupportV7
   implementation rootProject.ext.dependence.libDesign
   implementation rootProject.ext.dependence.libConstraint

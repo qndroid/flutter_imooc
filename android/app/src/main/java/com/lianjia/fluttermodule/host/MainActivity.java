@@ -2,20 +2,21 @@ package com.lianjia.fluttermodule.host;
 
 import android.content.Intent;
 import android.os.Bundle;
-import com.lianjia.fluttermodule.capture.TestActivity;
 import com.lianjia.fluttermodule.constant.Constants;
+import com.lianjia.fluttermodule.utils.PermissionUtils;
+import com.youdu.zxing.app.CaptureActivity;
 import io.flutter.app.FlutterActivity;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugins.GeneratedPluginRegistrant;
-import java.io.Console;
 import java.io.Serializable;
 import java.util.Map;
 
 public class MainActivity extends FlutterActivity implements MethodChannel.MethodCallHandler {
+
+  private static final int REQUEST_QRCODE = 0x01;
   private static final String CHANNEL = "com.imooc/navigator";
-  private static final String METHOD_START_ACTIVITY = "start_activity";
-  private static final String METHOD_START_ACTIVITY_FOR_RESULT = "start_activity_for_result";
+  private static final String METHOD_START_QR_CODE = "start_qr_code";
 
   private MethodChannel.Result mResult;
 
@@ -29,42 +30,49 @@ public class MainActivity extends FlutterActivity implements MethodChannel.Metho
   @Override public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
     mResult = result;
     String method = methodCall.method;
-    //目的activity
-    String activityName = methodCall.argument(Constants.ACTIVITY_NAME);
     //目的activity参数
     Map params = null;
     if (methodCall.hasArgument(Constants.PARAMS)) {
       params = methodCall.argument(Constants.PARAMS);
     }
     switch (method) {
-      case METHOD_START_ACTIVITY:
-        startActivity(activityName, params);
-        break;
-      case METHOD_START_ACTIVITY_FOR_RESULT:
-        startActivityForResult(activityName, params);
+      case METHOD_START_QR_CODE:
+        gotoCaptuareActivity();
         break;
     }
   }
 
-  private void startActivity(String activityName, Map params) {
-    Intent intent = new Intent(this, TestActivity.class);
-    if (params != null) intent.putExtra(Constants.PARAMS, (Serializable) params);
-    startActivity(intent);
-    mResult.success(null);
+  //跳转到扫码activity
+  private void gotoCaptuareActivity() {
+    if (PermissionUtils.hasPermission(this, PermissionUtils.HARDWEAR_CAMERA_PERMISSION)) {
+      //已取得权限
+      Intent intent = new Intent(this, CaptureActivity.class);
+      startActivityForResult(intent, REQUEST_QRCODE);
+    } else {
+      PermissionUtils.requestPermission(this, PermissionUtils.HARDWEAR_CAMERA_CODE,
+          PermissionUtils.HARDWEAR_CAMERA_PERMISSION);
+    }
   }
 
-  private void startActivityForResult(String activityName, Map params) {
-    int requestCode = (int) params.get(Constants.REQUEST_CODE);
-    Intent intent = new Intent(this, TestActivity.class);
-    intent.putExtra(Constants.PARAMS, (Serializable) params);
-    startActivityForResult(intent, requestCode);
-  }
-
+  //获取其它页面返回结果处理
   @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
     if (resultCode == RESULT_OK) {
       //与flutter也以json的方式去通信，与发请求类似
       mResult.success(data.getStringExtra(Constants.RESULT));
+    }
+  }
+
+  //获取权限后的逻辑处理
+  @Override public void onRequestPermissionsResult(int requestCode, String[] permissions,
+      int[] grantResults) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    switch (requestCode) {
+      case PermissionUtils.HARDWEAR_CAMERA_CODE:
+        //已取得权限
+        Intent intent = new Intent(this, CaptureActivity.class);
+        startActivityForResult(intent, REQUEST_QRCODE);
+        break;
     }
   }
 }

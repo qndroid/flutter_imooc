@@ -31,12 +31,12 @@ class MainPageState extends State<MainPage> {
     var result;
     try {
       //跳转到原生页面并获取返回数据
-      result = await platform.invokeMethod('start_activity_for_result', {
-        'activity_name': 'test_activity',
+      result = await platform.invokeMethod('start_qr_code', {
         'params': {'user_name': 'flutter', 'request_code': 0}
       });
     } on PlatformException catch (e) {}
 
+    //打印扫码结果
     print(result);
   }
 
