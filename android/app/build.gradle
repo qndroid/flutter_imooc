@@ -21,6 +21,11 @@ android {
       signingConfig signingConfigs.debug
     }
   }
+
+  compileOptions {
+    sourceCompatibility rootProject.ext.java.javaVersion
+    targetCompatibility rootProject.ext.java.javaVersion
+  }
 }
 buildDir = new File(rootProject.projectDir, "../build/host")
 

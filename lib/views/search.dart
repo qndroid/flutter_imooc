@@ -19,9 +19,9 @@ class SearchPageState extends State<SearchPage> {
   //这个方法多次重复写了，应该可以入到theme里。
   ThemeData _getThemeData() {
     return initOptions.theme.data.copyWith(
-        platform: initOptions.platform,
-        primaryColor: Colors.white,
-        brightness: Brightness.dark);
+      platform: initOptions.platform,
+      primaryColor: Colors.white,
+    );
   }
 
   Future<void> _handleSearch(String key) async {
@@ -116,7 +116,7 @@ class SearchPageState extends State<SearchPage> {
               SizedBox(
                 height: 50,
                 child: Center(
-                  child: Text('您可以输入宝贝代码，简称或者拼音字母开始查找'),
+                  child: Text(SEARCH_TIP),
                 ),
               ),
             ],

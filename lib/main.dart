@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import 'views/loading.dart';
 import 'theme/options.dart';
+import 'test.dart';
 
 class ImoocApp extends StatelessWidget {
   static final String pageTitle = 'Imooc';

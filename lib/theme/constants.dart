@@ -62,3 +62,5 @@ final String SHARE_WEIXIN_MOMENT = "WEIXIN_MOMENT";
 final String LOGIN_INPUTE_ACCOUNT = '请输入帐户';
 final String LOGIN_INPUTE_PWD = '请输入密码';
 final String LOGIN_LOGIN = '登陆';
+
+final String SEARCH_TIP = '您可以输入宝贝代码，简称或者拼音字母开始查找';

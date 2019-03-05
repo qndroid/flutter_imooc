@@ -14,6 +14,7 @@ class LoadingPage extends StatefulWidget {
 class LoadingPageState extends State<LoadingPage>
     with TickerProviderStateMixin {
   AnimationController _animationController;
+  Animation<double> alpha;
   var _animationStateListener;
 
   @override

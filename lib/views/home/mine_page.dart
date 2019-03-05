@@ -26,9 +26,9 @@ class MinePageState extends State<MinePage> {
 
   ThemeData _getThemeData() {
     return initOptions.theme.data.copyWith(
-        platform: initOptions.platform,
-        primaryColor: Colors.white,
-        brightness: Brightness.dark);
+      platform: initOptions.platform,
+      primaryColor: Colors.white,
+    );
   }
 
   Widget _getUserInfoWidget() {

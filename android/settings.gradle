@@ -1,5 +1,5 @@
 // Generated file. Do not edit.
-include ':app'
+include ':app', ':test'
 
 rootProject.name = 'android_generated'
 setBinding(new Binding([gradle: this]))

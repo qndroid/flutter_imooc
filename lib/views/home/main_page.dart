@@ -69,7 +69,7 @@ class MainPageState extends State<MainPage> {
                       return SearchPage();
                     }, transitionsBuilder: (
                       BuildContext context,
-                      Animation<double> animation,
+                      Animation<double> animation, // 默认的路由动画
                       Animation<double> secondaryAnimation,
                       Widget child,
                     ) {

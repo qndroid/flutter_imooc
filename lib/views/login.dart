@@ -19,9 +19,9 @@ class LoginPageState extends State<LoginPage> {
 
   ThemeData _getThemeData() {
     return initOptions.theme.data.copyWith(
-        platform: initOptions.platform,
-        primaryColor: Colors.white,
-        brightness: Brightness.dark);
+      platform: initOptions.platform,
+      primaryColor: Colors.white,
+    );
   }
 
   //登陆

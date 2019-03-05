@@ -10,6 +10,8 @@ ext {
   flutter = [versionCode: 1,
              versionName: '1.0.0',]
 
+  java = [javaVersion: 1.8,]
+
   signConfigs = ['storeFile'    : 'youdo.jks',
                  'storePassword': 'rzq123456',
                  'keyAlias'     : 'qndroid',
