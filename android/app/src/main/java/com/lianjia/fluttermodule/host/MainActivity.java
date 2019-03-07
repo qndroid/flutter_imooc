@@ -6,6 +6,7 @@ import com.lianjia.fluttermodule.constant.Constants;
 import com.lianjia.fluttermodule.utils.PermissionUtils;
 import com.youdu.zxing.app.CaptureActivity;
 import io.flutter.app.FlutterActivity;
+import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugins.GeneratedPluginRegistrant;
@@ -25,6 +26,8 @@ public class MainActivity extends FlutterActivity implements MethodChannel.Metho
     GeneratedPluginRegistrant.registerWith(this);
     //创建通信channle
     new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(this);
+    new EventChannel(getFlutterView(), PushStreamHandler.PUSH_CHANNEL).setStreamHandler(
+        new PushStreamHandler(getApplicationContext()));
   }
 
   @Override public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {

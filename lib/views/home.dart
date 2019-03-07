@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'home/main_page.dart';
 import 'home/message_page.dart';
@@ -13,6 +14,9 @@ class HomePage extends StatefulWidget {
 
 //创建首页选项卡
 class HomePageState extends State<HomePage> {
+  static const EventChannel _eventChannel =
+  const EventChannel('com.imooc/push_channel');
+
   static final _tabs = [
     HomeTabModel._(HOME_PAGE, HOME_ICON, HOME_SELECTED_ICON),
     HomeTabModel._(MESSAGE_TITLE, MESSAGE_ICON, MESSAGE_SELECTED_ICON),
@@ -25,6 +29,12 @@ class HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _pages = [MainPage(), MessagePage(), MinePage()];
+
+    _eventChannel.receiveBroadcastStream().listen(_onSuccess);
+  }
+
+  void _onSuccess(Object event) {
+    print(event);
   }
 
   @override
