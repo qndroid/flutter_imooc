@@ -30,26 +30,28 @@ public class PushStreamHandler implements EventChannel.StreamHandler {
     mContext.unregisterReceiver(mBroadcastReceiver);
     mBroadcastReceiver = null;
   }
-}
 
-class PushBroadcastReceiver extends BroadcastReceiver {
+  private static class PushBroadcastReceiver extends BroadcastReceiver {
 
-  private EventChannel.EventSink mEventSink; //发送事件到flutter端
+    private EventChannel.EventSink mEventSink; //发送事件到flutter端
 
-  public PushBroadcastReceiver(EventChannel.EventSink events) {
-    mEventSink = events;
-  }
+    public PushBroadcastReceiver(EventChannel.EventSink events) {
+      mEventSink = events;
+    }
 
-  @Override public void onReceive(Context context, Intent intent) {
-    if (intent.getAction() == WifiManager.WIFI_STATE_CHANGED_ACTION) {
-      switch (intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN)) {
-        case WifiManager.WIFI_STATE_DISABLED:
-          mEventSink.success("WIFI不可用");
-          break;
-        case WifiManager.WIFI_STATE_ENABLED:
-          mEventSink.success("WIFI可用");
-          break;
+    @Override public void onReceive(Context context, Intent intent) {
+      if (intent.getAction() == WifiManager.WIFI_STATE_CHANGED_ACTION) {
+        switch (intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN)) {
+          case WifiManager.WIFI_STATE_DISABLED:
+            mEventSink.success("WIFI不可用");
+            break;
+          case WifiManager.WIFI_STATE_ENABLED:
+            mEventSink.success("WIFI可用");
+            break;
+        }
       }
     }
   }
 }
+
+

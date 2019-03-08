@@ -30,10 +30,12 @@ android {
 buildDir = new File(rootProject.projectDir, "../build/host")
 
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
   implementation project(rootProject.ext.dependence.productFlutter)
   implementation rootProject.ext.dependence.libSupportV7
   implementation rootProject.ext.dependence.libDesign
   implementation rootProject.ext.dependence.libConstraint
   implementation rootProject.ext.dependence.libOkhttp
+  implementation files('libs/jcore-android-1.2.7.jar')
+  implementation files('libs/jpush-android-3.2.0.jar')
 }
