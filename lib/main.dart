@@ -1,20 +1,34 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-// Thanks for checking out Flutter!
-// Like what you see? Tweet us @flutterio
-
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'views/loading.dart';
 import 'theme/options.dart';
 import 'test.dart';
 
-class ImoocApp extends StatelessWidget {
+class ImoocApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return ImoocAppState();
+  }
+}
+
+class ImoocAppState extends State<ImoocApp> {
   static final String pageTitle = 'Imooc';
+  static const EventChannel _eventChannel =
+      const EventChannel('com.imooc/push_channel');
 
   showLoadingPage() {
     return LoadingPage();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _eventChannel.receiveBroadcastStream().listen(_onSuccess);
+  }
+
+  //flutter处理push的入口，从此处去不同的dispatcher
+  void _onSuccess(Object event) {
+    print(event);
   }
 
   @override

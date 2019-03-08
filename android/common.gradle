@@ -25,6 +25,7 @@ ext {
                 'libDesign'         : 'com.android.support:design:27.1.1',
                 'libConstraint'     : 'com.android.support.constraint:constraint-layout:1.1.2',
                 'libOkhttp'         : 'com.squareup.okhttp3:okhttp:3.3.0',
+                'libEventBus'       : 'org.greenrobot:eventbus:3.1.1',
                 'productFlutter'    : ':flutter',
                 'productQrcode'     : ':qrcode',
 

@@ -26,7 +26,7 @@ public class MainActivity extends FlutterActivity implements MethodChannel.Metho
     //创建通信channle
     new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(this);
     new EventChannel(getFlutterView(), PushStreamHandler.PUSH_CHANNEL).setStreamHandler(
-        new PushStreamHandler(getApplicationContext()));
+        new PushStreamHandler());
   }
 
   @Override public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
