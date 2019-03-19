@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 import '../theme/constants.dart';
+import '../sp/sp.dart';
+import 'introduct.dart';
 
 class LoadingPage extends StatefulWidget {
   @override
@@ -25,9 +27,16 @@ class LoadingPageState extends State<LoadingPage>
     _animationStateListener = (status) {
       if (status == AnimationStatus.completed) {
         //动画结束时跳转新页面
-        Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => HomePage()),
-            (route) => route == null);
+        SpPlugin.getBoolean(SpPlugin.IS_SHOW_GUIDE).then(
+          (isShow) {
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                    builder: (context) => isShow ? IntroPage() : IntroPage()),
+                (route) => route == null);
+
+            SpPlugin.putBoolean(SpPlugin.IS_SHOW_GUIDE, true);
+          },
+        );
       }
     };
     _animationController

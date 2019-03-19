@@ -35,7 +35,7 @@ public class SharePlugin implements MethodCallHandler {
   private SharePlugin(Registrar registrar, MethodChannel channel) {
     this.mRegistrar = registrar;
     this.mMethodChannel = channel;
-    init(registrar.activity());
+    init(registrar.activity().getApplicationContext());
   }
 
   //初始化友盟SDK

@@ -5,6 +5,7 @@ import '../../commponents/frame_animation.dart';
 import '../../theme/constants.dart';
 import '../search.dart';
 import '../../theme/style.dart';
+import '../../sp/sp.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -27,7 +28,7 @@ class MainPageState extends State<MainPage> {
     PAGE_LOADING_ICON_09,
   ];
 
-  Future<void> _startCaptureActivity() async {
+  Future<String> _startCaptureActivity() async {
     var result;
     try {
       //跳转到原生页面并获取返回数据
@@ -37,7 +38,7 @@ class MainPageState extends State<MainPage> {
     } on PlatformException catch (e) {}
 
     //打印扫码结果
-    print(result);
+    return result;
   }
 
   Widget _getTitleWidget() {
@@ -107,6 +108,11 @@ class MainPageState extends State<MainPage> {
       height: 125,
       interval: 80,
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override

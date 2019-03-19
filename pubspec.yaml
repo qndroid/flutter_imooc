@@ -67,6 +67,9 @@ flutter:
      - lib/image/comui_share_qq.png
      - lib/image/comui_share_qqzone.png
      - lib/image/icon_login.png
+     - lib/image/welcome_1.png
+     - lib/image/welcome_2.png
+     - lib/image/welcome_3.png
      - lib/image/icon_search.png
 
 

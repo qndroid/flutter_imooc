@@ -3,6 +3,8 @@ package com.lianjia.fluttermodule.host;
 import android.content.Intent;
 import android.os.Bundle;
 import com.lianjia.fluttermodule.constant.Constants;
+import com.lianjia.fluttermodule.push.PushStreamHandler;
+import com.lianjia.fluttermodule.sp.SPStreamHandler;
 import com.lianjia.fluttermodule.utils.PermissionUtils;
 import com.youdu.zxing.app.CaptureActivity;
 import io.flutter.app.FlutterActivity;
@@ -23,10 +25,14 @@ public class MainActivity extends FlutterActivity implements MethodChannel.Metho
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     GeneratedPluginRegistrant.registerWith(this);
-    //创建通信channle
+    //创建方法通信channle
     new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(this);
+    //创建事件通信channel
     new EventChannel(getFlutterView(), PushStreamHandler.PUSH_CHANNEL).setStreamHandler(
         new PushStreamHandler());
+    //调用主工程的sp存数据，native如何使用封装的plugin
+    new MethodChannel(getFlutterView(), SPStreamHandler.SP_CHANNEL).setMethodCallHandler(
+        new SPStreamHandler());
   }
 
   @Override public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
