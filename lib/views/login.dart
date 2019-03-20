@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../theme/options.dart';
 import '../theme/constants.dart';
+import '../theme/style.dart';
 import '../request/api.dart';
 import '../manager/user_manager.dart';
 import '../commponents/progress_dialog.dart';
@@ -16,13 +16,6 @@ class LoginPageState extends State<LoginPage> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _pwdController = TextEditingController();
   bool _loading = false;
-
-  ThemeData _getThemeData() {
-    return initOptions.theme.data.copyWith(
-      platform: initOptions.platform,
-      primaryColor: Colors.white,
-    );
-  }
 
   //登陆
   Future<void> _login() async {
@@ -41,7 +34,7 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: _getThemeData(),
+      data: getWhiteTheme(),
       child: ProgressDialog(
         loading: _loading,
         child: Scaffold(

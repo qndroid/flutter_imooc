@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../../commponents/frame_animation.dart';
 import '../../theme/constants.dart';
 import '../search.dart';
+import '../category/category.dart';
 import '../../theme/style.dart';
-import '../../sp/sp.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -16,17 +16,6 @@ class MainPage extends StatefulWidget {
 
 class MainPageState extends State<MainPage> {
   static const platform = const MethodChannel('com.imooc/navigator');
-  final List<String> _assetList = [
-    PAGE_LOADING_ICON_01,
-    PAGE_LOADING_ICON_02,
-    PAGE_LOADING_ICON_03,
-    PAGE_LOADING_ICON_04,
-    PAGE_LOADING_ICON_05,
-    PAGE_LOADING_ICON_06,
-    PAGE_LOADING_ICON_07,
-    PAGE_LOADING_ICON_08,
-    PAGE_LOADING_ICON_09,
-  ];
 
   Future<String> _startCaptureActivity() async {
     var result;
@@ -92,18 +81,38 @@ class MainPageState extends State<MainPage> {
             ),
           ),
         ),
-        SizedBox(
-          width: 24,
-          height: 24,
-          child: Image.asset(CAT_ICON),
-        ),
+        GestureDetector(
+          child: SizedBox(
+            width: 24,
+            height: 24,
+            child: Image.asset(CAT_ICON),
+          ),
+          onTapDown: (TapDownDetails details) {
+            //也可以提取出来优化
+            Navigator.push(
+                context,
+                new PageRouteBuilder(pageBuilder: (BuildContext context,
+                    Animation<double> animation,
+                    Animation<double> secondaryAnimation) {
+                  // 跳转的路由对象
+                  return CategoryPage();
+                }, transitionsBuilder: (
+                  BuildContext context,
+                  Animation<double> animation, // 默认的路由动画
+                  Animation<double> secondaryAnimation,
+                  Widget child,
+                ) {
+                  return createRight2LeftTransition(animation, child);
+                }));
+          },
+        )
       ],
     );
   }
 
   Widget _getProgressWidget() {
     return FrameAnimationImage(
-      _assetList,
+      assetList,
       width: 125,
       height: 125,
       interval: 80,

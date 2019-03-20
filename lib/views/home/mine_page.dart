@@ -24,13 +24,6 @@ class MinePage extends StatefulWidget {
 class MinePageState extends State<MinePage> {
   User _user;
 
-  ThemeData _getThemeData() {
-    return initOptions.theme.data.copyWith(
-      platform: initOptions.platform,
-      primaryColor: Colors.white,
-    );
-  }
-
   Widget _getUserInfoWidget() {
     return Padding(
       padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
@@ -139,7 +132,7 @@ class MinePageState extends State<MinePage> {
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: _getThemeData(),
+      data: getWhiteTheme(),
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,

@@ -16,14 +16,6 @@ class SearchPage extends StatefulWidget {
 class SearchPageState extends State<SearchPage> {
   SearchModel _searchModel;
 
-  //这个方法多次重复写了，应该可以入到theme里。
-  ThemeData _getThemeData() {
-    return initOptions.theme.data.copyWith(
-      platform: initOptions.platform,
-      primaryColor: Colors.white,
-    );
-  }
-
   Future<void> _handleSearch(String key) async {
     print(key);
     var data = await search(key);
@@ -129,7 +121,7 @@ class SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: _getThemeData(),
+      data: getWhiteTheme(),
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,

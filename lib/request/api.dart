@@ -4,6 +4,7 @@ import '../model/home_model.dart';
 import '../model/check_version_model.dart';
 import '../model/user_model.dart';
 import '../model/search_model.dart';
+import '../model/category_model.dart';
 
 Future<HomeData> getHomeData() async {
   //模拟请求参数
@@ -46,4 +47,13 @@ Future<SearchModel> search(key) async {
   };
   final String result = await HttpPlugin.get(data);
   return SearchModel.fromJson(json.decode(result));
+}
+
+Future<CategoryModel> getCategory() async {
+  //模拟请求参数
+  var data = {
+    "url": "http://api.imooc.com/category",
+  };
+  final String result = await HttpPlugin.get(data);
+  return CategoryModel.fromJson(json.decode(result));
 }

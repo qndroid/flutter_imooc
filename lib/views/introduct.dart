@@ -26,9 +26,9 @@ class IntroPage extends StatelessWidget {
                     pageVisibility: pageVisibility,
                   );
                   if (index == sampleItems.length - 1) {
-                    return GestureDetector(
+                    return InkWell(
                       child: child,
-                      onTapDown: (TapDownDetails details) {
+                      onTap: () {
                         Navigator.of(context).pushAndRemoveUntil(
                             MaterialPageRoute(builder: (context) => HomePage()),
                             (route) => route == null);

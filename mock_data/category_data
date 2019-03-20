@@ -1,0 +1,141 @@
+{
+	"defaultId": "001",
+	"mainCategoryItems": [{
+			"cateId": "001",
+			"cateName": "热门推荐",
+			"subCategoryGroups": [{
+					"cateGroupName": "推荐",
+					"cateList": [{
+						"cateId": "001001",
+						"cateTitle": "生鲜水果",
+						"cateUrl": "lib/image/page_loading_01.png"
+					}, {
+						"cateId": "001002",
+						"cateTitle": "拍卖日历",
+						"cateUrl": "lib/image/page_loading_02.png"
+					}, {
+						"cateId": "001003",
+						"cateTitle": "闲鱼租房",
+						"cateUrl": "lib/image/page_loading_03.png"
+					}, {
+						"cateId": "001004",
+						"cateTitle": "明星好物",
+						"cateUrl": "lib/image/page_loading_04.png"
+					}, {
+						"cateId": "001005",
+						"cateTitle": "闲鱼优品",
+						"cateUrl": "lib/image/page_loading_05.png"
+					}, {
+						"cateId": "001006",
+						"cateTitle": "时尚玩家",
+						"cateUrl": "lib/image/page_loading_06.png"
+					}]
+				}, {
+					"cateGroupName": "热门排行",
+					"cateList": [{
+						"cateId": "001007",
+						"cateTitle": "买实惠",
+						"cateUrl": "lib/image/page_loading_01.png"
+					}, {
+						"cateId": "001008",
+						"cateTitle": "宠物秀",
+						"cateUrl": "lib/image/page_loading_02.png"
+					}, {
+						"cateId": "001009",
+						"cateTitle": "视频秀",
+						"cateUrl": "lib/image/page_loading_03.png"
+					}]
+				}, {
+					"cateGroupName": "猜你喜欢",
+					"cateList": [{
+							"cateId": "001001",
+							"cateTitle": "生鲜水果",
+							"cateUrl": "lib/image/page_loading_01.png"
+						},
+						{
+							"cateId": "001002",
+							"cateTitle": "拍卖日历",
+							"cateUrl": "lib/image/page_loading_02.png"
+						},
+						{
+							"cateId": "001003",
+							"cateTitle": "闲鱼租房",
+							"cateUrl": "lib/image/page_loading_03.png"
+						}
+					]
+				},
+				{
+					"cateGroupName": "热门分类",
+					"cateList": [{
+							"cateId": "001001",
+							"cateTitle": "生鲜水果",
+							"cateUrl": "lib/image/page_loading_01.png"
+						},
+						{
+							"cateId": "001002",
+							"cateTitle": "拍卖日历",
+							"cateUrl": "lib/image/page_loading_02.png"
+						},
+						{
+							"cateId": "001003",
+							"cateTitle": "闲鱼租房",
+							"cateUrl": "lib/image/page_loading_03.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"cateId": "002",
+			"cateName": "生活百货"
+		},
+		{
+			"cateId": "003",
+			"cateName": "手机数码"
+		},
+		{
+			"cateId": "004",
+			"cateName": "女装"
+		},
+		{
+			"cateId": "005",
+			"cateName": "美妆"
+		},
+		{
+			"cateId": "006",
+			"cateName": "家用电器"
+		},
+		{
+			"cateId": "007",
+			"cateName": "运动户外"
+		},
+		{
+			"cateId": "008",
+			"cateName": "家具/饰品"
+		},
+		{
+			"cateId": "003",
+			"cateName": "手机数码"
+		},
+		{
+			"cateId": "004",
+			"cateName": "女装"
+		},
+		{
+			"cateId": "005",
+			"cateName": "美妆"
+		},
+		{
+			"cateId": "006",
+			"cateName": "家用电器"
+		},
+		{
+			"cateId": "007",
+			"cateName": "运动户外"
+		},
+		{
+			"cateId": "008",
+			"cateName": "家具/饰品"
+		}
+	]
+}

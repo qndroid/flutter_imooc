@@ -28,8 +28,21 @@ final String PAGE_LOADING_ICON_09 = 'lib/image/page_loading_09.png';
 final String LOGIN_ICON = 'lib/image/icon_login.png';
 final String SEARCH_ICON = 'lib/image/icon_search.png';
 
+final List<String> assetList = [
+  PAGE_LOADING_ICON_01,
+  PAGE_LOADING_ICON_02,
+  PAGE_LOADING_ICON_03,
+  PAGE_LOADING_ICON_04,
+  PAGE_LOADING_ICON_05,
+  PAGE_LOADING_ICON_06,
+  PAGE_LOADING_ICON_07,
+  PAGE_LOADING_ICON_08,
+  PAGE_LOADING_ICON_09,
+];
+
 final String HOME_PAGE = '首页';
 final String HOME_PAGE_SEARCH_HINT = '请输入宝贝关键字';
+final String HOME_PAGE_CATEGORY_HINT = '分类';
 final String MINE_PAGE = '我的';
 final String SHARE_WEIXIN_NAME = '微信';
 final String SHARE_MOMENT_NAME = '朋友圈';
